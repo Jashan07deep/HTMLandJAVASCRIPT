@@ -22,8 +22,38 @@ const button=document.querySelector('button')
  
 // Asynchronous example
 
-console.log("First line")
-setTimeout(()=>{
-    console.log("After 2 sec")
-},2000)
-console.log("Second line")
+// console.log("First line")
+// setTimeout(()=>{
+//     console.log("After 2 sec")
+// },2000)
+// console.log("Second line")
+
+
+// timeout function
+
+// setTimeout(()=>{
+//     alert("Alert after 3 sec")
+// },3000)
+
+
+// set interval
+
+// const timerID=setInterval(()=>{
+//     console.log("Hello world")
+// },1000)
+
+// to stop time interval
+
+// setTimeout(()=>{
+//     clearInterval(timerID)
+// },10000)
+
+// problem statement
+
+let count=1;
+
+const id=setInterval(()=>{
+    if(count==10)clearInterval(id)
+    console.log(count)
+    count+=1
+},1000)
