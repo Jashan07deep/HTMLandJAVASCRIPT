@@ -16,6 +16,14 @@ const button=document.querySelector('button')
 // button.addEventListener('keydown',function(event){
 //     console.log(event.key)
 // })
-button.addEventListener('keyup',function(event){
-    console.log(event.key)
-})
+// button.addEventListener('keyup',function(event){
+//     console.log(event.key)
+// })
+ 
+// Asynchronous example
+
+console.log("First line")
+setTimeout(()=>{
+    console.log("After 2 sec")
+},2000)
+console.log("Second line")
