@@ -50,10 +50,75 @@ const button=document.querySelector('button')
 
 // problem statement
 
-let count=1;
+// let count=1;
 
-const id=setInterval(()=>{
-    if(count==10)clearInterval(id)
-    console.log(count)
-    count+=1
-},1000)
+// const id=setInterval(()=>{
+//     if(count==10)clearInterval(id)
+//     console.log(count)
+//     count+=1
+// },1000)
+
+
+// callback fn
+// function print(name) {
+//     console.log("Hello Students",name)
+
+// }
+
+// higher order fn
+// function greet(num){
+//     console.log("Welcome to class")
+//     setTimeout(()=> {
+//         console.log("Inside setTimeout")
+//         let FirstName="Alex"
+//         num(FirstName)
+
+//     },2000);
+// }
+
+// greet (print)
+
+// Callback hell
+
+// console.log("Starting homework");
+
+// setTimeout(()=>{
+//     console.log("Homework done");
+//     console.log("Starting dinner")
+
+//     setTimeout(()=> {
+//         console.log("Dinner done");
+//         console.log("Getting ready to go out");
+
+//         setTimeout(()=>{
+//             console.log("Going to the playground");
+//         },1000)
+//     },1500)
+// },2000)
+
+
+// To face callback hell
+
+function finishhomework(callback) {
+    console.log("Starting Homework")
+    setTimeout(()=>{
+        console.log("Homework done");
+        callback();
+    },2000)
+}
+function eatdinner(callback){
+    console.log("Starting Dinner")
+    setTimeout(()=>{
+        console.log("Dinner done");
+        callback();
+    },1500);
+}
+function goToPlayground(){
+    console.log("Going to the playground");
+}
+
+finishhomework(()=>{
+    eatdinner(()=>{
+        goToPlayground();
+    })
+})
