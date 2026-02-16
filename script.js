@@ -203,36 +203,82 @@ const button=document.querySelector('button')
 // })
 
 
-console.log ("First line")
-setTimeout(()=>{
-    console.log("Inside Timeout")
-},0)
-const p=new Promise((resolve,reject)=>{
-    resolve()
-})
+// console.log ("First line")
+// setTimeout(()=>{
+//     console.log("Inside Timeout")
+// },0)
+// const p=new Promise((resolve,reject)=>{
+//     resolve()
+// })
 
-p.then(()=>{
-    console.log("Inside Promise")
-}).catch(()=>{
-    console.log("Inside catch")
-})
-const p2=new Promise((resolve,reject)=>{
-    resolve()
-})
+// p.then(()=>{
+//     console.log("Inside Promise")
+// }).catch(()=>{
+//     console.log("Inside catch")
+// })
+// const p2=new Promise((resolve,reject)=>{
+//     resolve()
+// })
 
-p2.then(()=>{
-    console.log("Inside Promise")
-}).catch(()=>{
-    console.log("Inside catch")
-})
-const p3=new Promise((resolve,reject)=>{
-    resolve()
-})
+// p2.then(()=>{
+//     console.log("Inside Promise")
+// }).catch(()=>{
+//     console.log("Inside catch")
+// })
+// const p3=new Promise((resolve,reject)=>{
+//     resolve()
+// })
 
-p3.then(()=>{
-    console.log("Inside Promise")
-}).catch(()=>{
-    console.log("Inside catch")
-})
+// p3.then(()=>{
+//     console.log("Inside Promise")
+// }).catch(()=>{
+//     console.log("Inside catch")
+// })
 
-console.log("last line")
+// console.log("last line")
+
+function orderfood(){
+    return new Promise(function(resolve,reject){
+        setTimeout(()=>{
+            console.log("Food ordered")
+            resolve("Food ordered")
+        },1000)
+    })
+}
+
+function preparefood(){
+    return new Promise(function(resolve,reject){
+        setTimeout(()=>{
+            console.log("Food Prepared")
+            resolve("Food Prepared")
+        },1000)
+    })
+}
+function Deliverfood(){
+    return new Promise(function(resolve,reject){
+        setTimeout(()=>{
+            console.log("Food Delivered")
+            resolve("Food Delivered")
+        },1000)
+    })
+}
+
+async function order(){
+    const data=await orderfood()
+    console.log(data)
+    await preparefood
+    await Deliverfood
+}
+
+order()
+
+// orderfood().then((data)=>{
+//     console.log(data)
+// }).then((data)=>{
+//     console.log(data)
+//     return Deliverfood()
+// }).then((data)=>{
+//     console.log(data)
+// }).catch((err)=>{
+//     console.log(err)
+// })
