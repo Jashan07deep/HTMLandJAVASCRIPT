@@ -237,44 +237,44 @@ const button=document.querySelector('button')
 
 // console.log("last line")
 
-function orderfood(){
-    return new Promise(function(resolve,reject){
-        setTimeout(()=>{
-            console.log("Food ordered")
-            resolve("Food ordered")
-        },1000)
-    })
-}
+// function orderfood(){
+//     return new Promise(function(resolve,reject){
+//         setTimeout(()=>{
+//             console.log("Food ordered")
+//             resolve("Food ordered")
+//         },1000)
+//     })
+// }
 
-function preparefood(){
-    return new Promise(function(resolve,reject){
-        setTimeout(()=>{
-            console.log("Food Prepared")
-            resolve("Food Prepared")
-        },1000)
-    })
-}
-function Deliverfood(){
-    return new Promise(function(resolve,reject){
-        setTimeout(()=>{
-            console.log("Food Delivered")
-            resolve("Food Delivered")
-        },1000)
-    })
-}
+// function preparefood(){
+//     return new Promise(function(resolve,reject){
+//         setTimeout(()=>{
+//             console.log("Food Prepared")
+//             resolve("Food Prepared")
+//         },1000)
+//     })
+// }
+// function Deliverfood(){
+//     return new Promise(function(resolve,reject){
+//         setTimeout(()=>{
+//             console.log("Food Delivered")
+//             resolve("Food Delivered")
+//         },1000)
+//     })
+// }
 
-async function order(){
-    const data=await orderfood()
-    console.log(data)
-    await preparefood
-    await Deliverfood
-}
+// async function order(){
+//     const data=await orderfood()
+//     console.log(data)
+//     await preparefood
+//     await Deliverfood
+// }
 
-order()
+// order()
 
 // orderfood().then((data)=>{
-//     console.log(data)
-// }).then((data)=>{
+    //     console.log(data)
+    // }).then((data)=>{
 //     console.log(data)
 //     return Deliverfood()
 // }).then((data)=>{
@@ -282,3 +282,101 @@ order()
 // }).catch((err)=>{
 //     console.log(err)
 // })
+
+// console.log("First line")
+// try{
+//     console.log(sample)
+// }catch(error){
+//     console.log(error)
+// }
+// console.log("Last line")
+
+
+
+// console.log("First line")
+// try{
+//     console.log(sample)
+// }catch(error){
+//     console.log(error)
+// }finally{
+//     console.log("Finally block")
+// }
+// console.log("Last line")
+
+// console.log("Forst line")
+// try{
+//     let age=19
+//     if(age<18){
+//         throw new error("Access Denied")
+    
+//     }
+// }catch(error){
+//     console.log(error)
+// }finally{
+//     console.log("Finally block")
+// }
+// console.log("Last line")
+
+// async function getData(){
+//     try{
+//         const response= await fetch("https://dummyjson.com/carts")
+//         console.log(response.ok)
+//         if(response.ok===false)throw new Error("Data not found")
+//         const data=await response.json()
+//         console.log(data)
+//         //data.products.forEach((ele)=>{
+//        //  console.log(Element.price)
+//        // })
+
+
+//     }catch(error){
+
+//     }
+
+// }
+
+// try{
+//     const response=await fetch('https://jsonplaceholder.typicode.com/todos/1', {
+//         method: 'POST',
+//         headers: {'Content-Type': 'application/json'    },
+//         body: JSON.stringify({
+//             title:"Macbook",
+//             description:"Macbook Pro",
+//             price:100000,
+//             discountPercentage:5,
+//             rating:4.5,
+//             stock:5,
+//             brand:"Apple",
+//         })
+
+//     })
+
+//     const data=await response.json()
+//     console.log(data)
+// }catch (error){
+//     console.log("Data not found")
+// }
+// sendData
+
+let obj={
+    title:"Macbook",
+    description:"Macbook Pro"
+}
+
+localStorage.setItem("obj",JSON.stringify(obj))
+localStorage.setItem("name","Devendra")
+localStorage.setItem("age",23)
+console.log(localStorage.getItem("name"))
+console.log(localStorage.getItem("age"))
+console.log(JSON.parse(localStorage.getItem("OBJ")))
+
+// localStorage.removeItem("age")
+
+// Session storage
+
+sessionStorage.setItem("obj",JSON.stringify(obj))
+sessionStorageStorage.setItem("name","Devendra")
+sessionStorageStorage.setItem("age",23)
+console.log(sessionStorageStorage.getItem("name"))
+console.log(sessionStorageStorage.getItem("age"))
+console.log(JSON.parse(sessionStorageStorage.getItem("OBJ")))
